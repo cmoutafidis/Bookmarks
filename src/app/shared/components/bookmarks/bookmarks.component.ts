@@ -16,6 +16,7 @@ export class BookmarksComponent implements OnInit {
     @Output() deleteBookmarkEvent = new EventEmitter<Bookmark>();
     editToggle = false;
     temporaryBookmark: Bookmark;
+    searchFilter = '';
 
     constructor() {
     }
@@ -24,7 +25,7 @@ export class BookmarksComponent implements OnInit {
     }
 
     onSearchChange($event) {
-        console.log($event.target.value);
+        this.searchFilter = $event.target.value;
     }
 
     createBookmark($event: Bookmark) {

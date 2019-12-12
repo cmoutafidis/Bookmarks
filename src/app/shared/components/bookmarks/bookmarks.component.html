@@ -4,7 +4,7 @@
             <input matInput placeholder="Filter bookmarks..." (input)="onSearchChange($event)">
         </mat-form-field>
         <div *ngFor="let bookmark of bookmarks | keyvalue" class="bookmarks-container">
-            <div *ngIf="!selectedGroup || bookmark.value.group == selectedGroup" class="bookmark-content">
+            <div *ngIf="(!searchFilter || bookmark.value.name.toLowerCase().includes(searchFilter.toLowerCase())) && (!selectedGroup || bookmark.value.group == selectedGroup)" class="bookmark-content">
                 <app-bookmark (updateBookmarkEvent)="toggleUpdateBookmark($event, true)" (deleteBookmarkEvent)="deleteBookmark($event)" [bookmark]="bookmark.value"></app-bookmark>
             </div>
         </div>
