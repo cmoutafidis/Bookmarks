@@ -1,6 +1,7 @@
 .bookmarks-component {
     display: flex;
     flex-direction: row;
+    height: 100%;
 
     .example-form {
         width: 100%;
@@ -19,7 +20,12 @@
     }
 
     .edit-toggle, .create-toggle {
+        background: white;
         padding: 16px;
         width: 25%;
     }
+}
+
+.bookmarks-form {
+    padding: 16px;
 }

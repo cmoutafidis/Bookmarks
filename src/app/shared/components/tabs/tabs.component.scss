@@ -5,7 +5,7 @@
         height: 100%;
 
         mat-sidenav {
-            width: 25%;
+            width: 20%;
             padding: 16px;
 
             .header-content {
@@ -29,7 +29,7 @@
 
         mat-sidenav-content {
             .page-content {
-                padding: 16px;
+                height: 100%;
             }
         }
     }
