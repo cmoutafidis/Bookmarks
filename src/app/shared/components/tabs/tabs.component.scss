@@ -1,0 +1,36 @@
+.component-tabs {
+    height: 100%;
+
+    mat-sidenav-container {
+        height: 100%;
+
+        mat-sidenav {
+            width: 25%;
+            padding: 16px;
+
+            .header-content {
+                max-width: 100%;
+                margin: 0 auto;
+                text-align: center;
+
+                .title {
+
+                }
+
+                .logo {
+                    width: 50%;
+                }
+            }
+
+            .groups-container {
+
+            }
+        }
+
+        mat-sidenav-content {
+            .page-content {
+                padding: 16px;
+            }
+        }
+    }
+}

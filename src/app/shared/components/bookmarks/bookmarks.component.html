@@ -1,0 +1,63 @@
+<div class="bookmarks-component">
+    <form class="example-form">
+        <mat-form-field class="filter">
+            <input matInput placeholder="Filter bookmarks..." (input)="onSearchChange($event)">
+        </mat-form-field>
+        <button type="button" mat-button (click)="toggleCreateBookmark(true)">...or create a new bookmark</button>
+        <div *ngFor="let bookmark of bookmarks | keyvalue" class="bookmarks-container">
+            <div *ngIf="(!searchFilter || bookmark.value.name.toLowerCase().includes(searchFilter.toLowerCase())) && (!selectedGroup || bookmark.value.group == selectedGroup)" class="bookmark-content">
+                <app-bookmark (updateBookmarkEvent)="toggleUpdateBookmark($event, true)" (deleteBookmarkEvent)="deleteBookmark($event)" [bookmark]="bookmark.value"></app-bookmark>
+            </div>
+        </div>
+    </form>
+    <div *ngIf="editToggle" class="edit-toggle" [formGroup]="editForm">
+        <div class="header">
+            <i class="material-icons" (click)="toggleUpdateBookmark(undefined, false)">arrow_back</i>
+        </div>
+        <div class="content">
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                    <label>
+                        <input matInput placeholder="Name" formControlName="name" type="text" [(ngModel)]="temporaryBookmark.name" required>
+                    </label>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <label>
+                        <input matInput placeholder="Url" formControlName="url" type="url" [(ngModel)]="temporaryBookmark.url" required>
+                    </label>
+                </mat-form-field>
+                <button type="button" mat-button (click)="updateBookmark()" [disabled]="editForm.invalid">Edit</button>
+            </form>
+        </div>
+    </div>
+    <div *ngIf="createToggle" class="create-toggle">
+        <div class="header">
+            <i class="material-icons" (click)="toggleCreateBookmark(false)">arrow_back</i>
+        </div>
+        <div class="content">
+            <form class="example-form" [formGroup]="createForm">
+                <mat-form-field class="example-full-width">
+                    <label>
+                        <input matInput placeholder="Name" formControlName="name" type="text" [(ngModel)]="temporaryBookmark.name" required>
+                    </label>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <label>
+                        <input matInput placeholder="Url" formControlName="url" type="url" [(ngModel)]="temporaryBookmark.url" required>
+                    </label>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Group</mat-label>
+                    <mat-select [(ngModel)]="temporaryBookmark.group" formControlName="group" required>
+                        <mat-option *ngFor="let group of availableGroups" [value]="group.id">
+                            {{group.path + group.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <button type="button" mat-button (click)="createBookmark()" [disabled]="createForm.invalid">Create</button>
+            </form>
+        </div>
+    </div>
+</div>

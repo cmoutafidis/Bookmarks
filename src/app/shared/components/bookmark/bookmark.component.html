@@ -1,0 +1,9 @@
+<div class="bookmark-container">
+    <span class="title">{{bookmark.name}}</span>
+    <span class="url">{{bookmark.url.split('/')[2]}}</span>
+    <div class="actions">
+        <button type="button" mat-button (click)="updateAction($event)">Edit</button>
+        <button type="button" mat-button (click)="deleteAction($event)">Delete</button>
+        <a mat-button target="_blank" [href]="bookmark.url">Open in a new tab</a>
+    </div>
+</div>
