@@ -8,7 +8,7 @@ import {
     MatButtonModule,
     MatFormFieldModule,
     MatIconModule,
-    MatInputModule,
+    MatInputModule, MatSelectModule,
     MatSidenavModule,
     MatToolbarModule,
     MatTreeModule
@@ -24,7 +24,7 @@ import {GroupComponent} from './shared/components/group/group.component';
 import {groupReducer} from './shared/reducers/group.reducer';
 import {bookmarkReducer} from './shared/reducers/bookmark.reducer';
 import {GroupsComponent} from './shared/components/groups/groups.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -51,7 +51,9 @@ import {FormsModule} from '@angular/forms';
         MatFormFieldModule,
         MatInputModule,
         MatTreeModule,
-        FormsModule
+        FormsModule,
+        MatSelectModule,
+        ReactiveFormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

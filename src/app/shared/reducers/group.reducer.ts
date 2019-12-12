@@ -8,10 +8,12 @@ const defaultState: Group[] = [
         {
             id: 'aaaa-bbbb-cccc-dddd',
             name: 'work',
+            path: '/',
             children: [
                 {
                     id: 'aaaa-bbbb-cccc-eeee',
                     name: 'gitlab',
+                    path: '/work/',
                     children: []
                 }
             ]
@@ -19,19 +21,23 @@ const defaultState: Group[] = [
         {
             id: 'aaaa-bbbb-cccc-ffff',
             name: 'social',
+            path: '/',
             children: [
                 {
                     id: 'aaaa-bbbb-cccc-gggg',
                     name: 'CNN',
+                    path: '/social/',
                     children: [
                         {
                             id: 'aaaa-bbbb-cccc-iiii',
                             name: 'tech-news',
+                            path: '/social/CNN/',
                             children: []
                         },
                         {
                             id: 'aaaa-bbbb-cccc-jjjj',
                             name: 'politics',
+                            path: '/social/CNN/',
                             children: []
                         }
                     ]
@@ -39,15 +45,18 @@ const defaultState: Group[] = [
                 {
                     id: 'aaaa-bbbb-cccc-hhhh',
                     name: 'Twitter',
+                    path: '/social/',
                     children: [
                         {
                             id: 'aaaa-bbbb-cccc-kkkk',
                             name: 'tech-news',
+                            path: '/social/Twitter/',
                             children: []
                         },
                         {
                             id: 'aaaa-bbbb-cccc-llll',
                             name: 'politics',
+                            path: '/social/Twitter/',
                             children: []
                         }
                     ]

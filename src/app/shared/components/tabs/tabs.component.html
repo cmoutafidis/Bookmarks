@@ -16,7 +16,9 @@
                 </button>
             </mat-toolbar>
             <div class="page-content">
-                <app-bookmarks (createBookmarkEvent)="createBookmark($event)" (updateBookmarkEvent)="updateBookmark($event)" (deleteBookmarkEvent)="deleteBookmark($event)" [bookmarks]="bookmarks" [selectedGroup]="selectedGroup"></app-bookmarks>
+                <app-bookmarks (createBookmarkEvent)="createBookmark($event)" (updateBookmarkEvent)="updateBookmark($event)"
+                               (deleteBookmarkEvent)="deleteBookmark($event)" [bookmarks]="bookmarks" [selectedGroup]="selectedGroup"
+                               [availableGroups]="availableGroupsForNewBookmarks"></app-bookmarks>
             </div>
         </mat-sidenav-content>
     </mat-sidenav-container>

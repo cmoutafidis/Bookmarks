@@ -19,12 +19,13 @@ export class TabsComponent implements OnInit {
     @Output() updateGroupEvent = new EventEmitter<Group>();
     @Output() deleteGroupEvent = new EventEmitter<Group>();
     selectedGroup: string;
+    availableGroupsForNewBookmarks: Group[];
 
     constructor() {
     }
 
     ngOnInit() {
-        console.log(this.groups);
+        this.availableGroupsForNewBookmarks = this.findChildren(this.groups);
     }
 
     groupSelected($event: string) {
@@ -53,5 +54,25 @@ export class TabsComponent implements OnInit {
 
     deleteGroup($event: Group) {
         this.deleteGroupEvent.emit($event);
+    }
+
+    getAvailableGroups(): string[] {
+        const availableGroups: string[] = [];
+
+
+        return availableGroups;
+    }
+
+    findChildren(groups: Group[]): Group[] {
+        console.log(groups);
+        let leaves: Group[] = [];
+        groups.forEach((group) => {
+            if (group.children.length === 0) {
+               leaves.push(group);
+            } else {
+                leaves = leaves.concat(this.findChildren(group.children));
+            }
+        });
+        return leaves;
     }
 }
