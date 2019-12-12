@@ -64,7 +64,6 @@ export class TabsComponent implements OnInit {
     }
 
     findChildren(groups: Group[]): Group[] {
-        console.log(groups);
         let leaves: Group[] = [];
         groups.forEach((group) => {
             if (group.children.length === 0) {
