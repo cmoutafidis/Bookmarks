@@ -38,5 +38,5 @@ When no group is selected, all the bookmarks are shown.
 Also, you can filter your bookmarks by name, as shown bellow.
 ![](filter-bookmarks.gif)
 
-Last but not least, you can create, edit and delete a bookmark. 
+Last but not least, you can create, edit and delete a bookmark. You can create a new bookmark by clicking the button under the search button.
 ![](bookmark-cud.gif)
