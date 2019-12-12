@@ -1,0 +1,20 @@
+.bookmark-container {
+    border: 1px solid #ebebeb;
+    height: 70px;
+    padding: 16px;
+    position: relative;
+
+    .title {
+        margin-right: 8px;
+        display: block;
+    }
+    .url {
+        display: block;
+        font-size: 12px;
+        color: #acacac;
+    }
+    .actions {
+        position: absolute;
+        bottom: 16px;
+    }
+}

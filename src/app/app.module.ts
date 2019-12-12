@@ -4,6 +4,15 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatTreeModule
+} from '@angular/material';
 
 import {StoreModule} from '@ngrx/store';
 import {AngularFireModule} from '@angular/fire';
@@ -14,6 +23,8 @@ import {BookmarkComponent} from './shared/components/bookmark/bookmark.component
 import {GroupComponent} from './shared/components/group/group.component';
 import {groupReducer} from './shared/reducers/group.reducer';
 import {bookmarkReducer} from './shared/reducers/bookmark.reducer';
+import {GroupsComponent} from './shared/components/groups/groups.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -21,6 +32,7 @@ import {bookmarkReducer} from './shared/reducers/bookmark.reducer';
         TabsComponent,
         BookmarksComponent,
         BookmarkComponent,
+        GroupsComponent,
         GroupComponent
     ],
     imports: [
@@ -31,7 +43,15 @@ import {bookmarkReducer} from './shared/reducers/bookmark.reducer';
             groups: groupReducer,
             bookmarks: bookmarkReducer
         }),
-        AngularFireModule.initializeApp(environment.firebase)
+        AngularFireModule.initializeApp(environment.firebase),
+        MatButtonModule,
+        MatIconModule,
+        MatSidenavModule,
+        MatToolbarModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatTreeModule,
+        FormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -1,0 +1,25 @@
+.bookmarks-component {
+    display: flex;
+    flex-direction: row;
+
+    .example-form {
+        width: 100%;
+    }
+
+    .example-full-width {
+        width: 100%;
+    }
+
+    .example-form {
+        flex-grow: 1;
+
+        .filter {
+            width: 100%;
+        }
+    }
+
+    .edit-toggle {
+        padding: 16px;
+        width: 25%;
+    }
+}

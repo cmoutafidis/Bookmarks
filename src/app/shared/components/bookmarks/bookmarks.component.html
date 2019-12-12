@@ -1,0 +1,33 @@
+<div class="bookmarks-component">
+    <form class="example-form">
+        <mat-form-field class="filter">
+            <input matInput placeholder="Filter bookmarks..." (input)="onSearchChange($event)">
+        </mat-form-field>
+        <div *ngFor="let bookmark of bookmarks | keyvalue" class="bookmarks-container">
+            <div *ngIf="!selectedGroup || bookmark.value.group == selectedGroup" class="bookmark-content">
+                <app-bookmark (updateBookmarkEvent)="toggleUpdateBookmark($event, true)" (deleteBookmarkEvent)="deleteBookmark($event)" [bookmark]="bookmark.value"></app-bookmark>
+            </div>
+        </div>
+    </form>
+    <div *ngIf="editToggle" class="edit-toggle">
+        <div class="header">
+            <i class="material-icons" (click)="toggleUpdateBookmark(undefined, false)">arrow_back</i>
+        </div>
+        <div class="content">
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                    <label>
+                        <input matInput placeholder="Name" name="name" [(ngModel)]="temporaryBookmark.name">
+                    </label>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <label>
+                        <input matInput placeholder="Url" name="url" [(ngModel)]="temporaryBookmark.url">
+                    </label>
+                </mat-form-field>
+                <button type="button" mat-button (click)="updateBookmark()">Edit</button>
+            </form>
+        </div>
+    </div>
+</div>

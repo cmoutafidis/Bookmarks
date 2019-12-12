@@ -1,0 +1,23 @@
+<div class="component-tabs">
+    <mat-sidenav-container>
+        <mat-sidenav #start [mode]="'side'">
+            <div class="header-content">
+                <h1 class="title">Bookmarks</h1>
+                <img src="../../../../assets/images/bookmark.png" alt="logo" class="logo">
+            </div>
+            <div class="groups-container">
+                <app-groups (groupSelectEvent)="groupSelected($event)" [groups]="groups"></app-groups>
+            </div>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <mat-toolbar>
+                <button mat-icon-button (click)="start.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </mat-toolbar>
+            <div class="page-content">
+                <app-bookmarks (createBookmarkEvent)="createBookmark($event)" (updateBookmarkEvent)="updateBookmark($event)" (deleteBookmarkEvent)="deleteBookmark($event)" [bookmarks]="bookmarks" [selectedGroup]="selectedGroup"></app-bookmarks>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

@@ -1,0 +1,7 @@
+<div *ngIf="groups$ | async as groups" class="page">
+    <div *ngIf="bookmarks$ | async as bookmarks" class="content">
+        <app-tabs (deleteBookmarkEvent)="deleteBookmarkAction($event)" (deleteGroupEvent)="deleteGroupAction($event)"
+                  (updateBookmarkEvent)="updateBookmarkAction($event)" (updateGroupEvent)="updateGroupAction($event)"
+                  (createBookmarkEvent)="createBookmarkAction($event)" (createGroupEvent)="createGroupAction($event)" [groups]="groups" [bookmarks]="bookmarks"></app-tabs>
+    </div>
+</div>
