@@ -1,5 +1,5 @@
 <div class="bookmarks-component">
-    <form class="example-form">
+    <form class="example-form bookmarks-form">
         <mat-form-field class="filter">
             <input matInput placeholder="Filter bookmarks..." (input)="onSearchChange($event)">
         </mat-form-field>
@@ -10,12 +10,12 @@
             </div>
         </div>
     </form>
-    <div *ngIf="editToggle" class="edit-toggle" [formGroup]="editForm">
+    <div *ngIf="editToggle" class="edit-toggle">
         <div class="header">
             <i class="material-icons" (click)="toggleUpdateBookmark(undefined, false)">arrow_back</i>
         </div>
         <div class="content">
-            <form class="example-form">
+            <form class="example-form" [formGroup]="editForm">
                 <mat-form-field class="example-full-width">
                     <label>
                         <input matInput placeholder="Name" formControlName="name" type="text" [(ngModel)]="temporaryBookmark.name" required>
