@@ -32,9 +32,11 @@ For demo purposes every time you reload the page the mock date will be displayed
 Also, you can't create new groups or edit/delete the existing ones. The logic behind those operations is implemented in the project but you are not able to use them in the UI.
 
 The first thing you need to know is that you can filter your bookmarks by group, as shown bellow. 
-
+![](filter-groups.gif)
 When no group is selected, all the bookmarks are shown.
 
 Also, you can filter your bookmarks by name, as shown bellow.
+![](filter-bookmarks.gif)
 
 Last but not least, you can create, edit and delete a bookmark. 
+![](bookmark-cud.gif)
